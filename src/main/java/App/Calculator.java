@@ -5,6 +5,8 @@
  */
 package App;
 
+import javax.swing.JTextField;
+
 /**
  *
  * @author User
@@ -205,8 +207,16 @@ public class Calculator extends javax.swing.JFrame {
             }
         });
 
+        Tv2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Tv2.setForeground(new java.awt.Color(51, 255, 51));
-        Tv2.setText("Result");
+        Tv2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        Tv2.setText("0");
+        Tv2.setMinimumSize(new java.awt.Dimension(10, 50));
+        Tv2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tv2ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("\t\t\t\tKALKULATOR");
 
@@ -223,7 +233,7 @@ public class Calculator extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Tv1)
-            .addComponent(Tv2)
+            .addComponent(Tv2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -328,7 +338,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-          number += "00";
+        number += "00";
         Tv2.setText(number);
     }//GEN-LAST:event_jButton10ActionPerformed
 
@@ -345,13 +355,8 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-      if(Tv2.getText().length() < 1){
-          number = "";
-      }else{
-          number = Tv2.getText().substring(0,Tv2.getText().length()-1);
-          Tv2.setText(number);
-      }
-               
+        del(Tv1);
+        del(Tv2);           
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void Tv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tv1ActionPerformed
@@ -452,6 +457,10 @@ public class Calculator extends javax.swing.JFrame {
         exit();
     }//GEN-LAST:event_jButton20ActionPerformed
 
+    private void Tv2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tv2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tv2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -516,6 +525,15 @@ public class Calculator extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
  
+  private void del(JTextField ET){
+        
+       if(ET.getText().length() < 1){
+          number = "";
+      }else{
+          number = ET.getText().substring(0,ET.getText().length()-1);
+          ET.setText(number);
+    }
+ }
   
   private void hitung(){
        switch(calculation){
