@@ -5,16 +5,18 @@
  */
 package App;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
  *
- * @author User
+ * @author Faizal Ilham
  */
 public class Calculator extends javax.swing.JFrame {
 
     /**
      * Creates new form Calculator
+     * Created by Faizal Ilham
      */
     String number = "" ;
     int calculation;
@@ -24,7 +26,9 @@ public class Calculator extends javax.swing.JFrame {
     }
 
     void exit(){
+        JOptionPane.showMessageDialog(null, "This app was created by Faizal Falakh, Thank you for using this app"); 
         System.exit(0);
+         
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -360,7 +364,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void Tv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tv1ActionPerformed
-         
+         // No code here
     }//GEN-LAST:event_Tv1ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
